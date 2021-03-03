@@ -1,13 +1,13 @@
 // Reducer function should be pure function
 import { ADD_MOVIES, ADD_FAVOURITE, DELETE_FAVOURITE, SHOW_FAVOURITE } from '../actions/index';
 
-const initialState = {
+const initialMoviesState = {
     list: [],
     favourite: [],
     showFavourite: false
 }
 
-export default function movies(state = initialState ,action) {
+export function movies(state = initialMoviesState ,action) {
     // if(action.type === ADD_MOVIES) {
     //     return {
     //         ...state,
@@ -21,13 +21,13 @@ export default function movies(state = initialState ,action) {
                 list: action.movies
             }
         case ADD_FAVOURITE: 
-          const filteredArrayAdd = state.list.filter(movie => {
-              return movie.Title !== action.movie.Title
-          })
+        //   const filteredArrayAdd = state.list.filter(movie => {
+        //       return movie.Title !== action.movie.Title
+        //   })
           return{
                 ...state,
                 favourite: [action.movie,...state.favourite],
-                list: filteredArrayAdd
+                // list: filteredArrayAdd
             }
         case DELETE_FAVOURITE: 
            const filteredArray = state.favourite.filter(
@@ -35,8 +35,7 @@ export default function movies(state = initialState ,action) {
            );
            return{
                  ...state,
-                 favourite: filteredArray,
-                 list: [state.list,action.movie]
+                 favourite: filteredArray
             }
         case SHOW_FAVOURITE:
             return {
@@ -46,7 +45,25 @@ export default function movies(state = initialState ,action) {
         default:
             return state;   
     }
-
-
     //return returns to the state
+}
+
+const intitalSearchState = {
+    result: {}
+}
+
+export function search(state = intitalSearchState,action) {
+    return state;
+}
+
+const initalRootState = {
+    movies: initialMoviesState,
+    search: intitalSearchState
+}
+
+export default function rootReducer(state = initalRootState,action) {
+    return{
+        movies: movies(state.movies,action),
+        search: search(state.search,action)
+    }
 }
