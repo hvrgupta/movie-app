@@ -21,7 +21,7 @@ class App extends React.Component {
   }
   
   render() {
-    const movies = this.props.store.getState();
+    const { list } = this.props.store.getState();
     return ( 
       <div>
           <Navbar />
@@ -35,7 +35,7 @@ class App extends React.Component {
               </div>
             </div>
             <div className="list">
-               {movies.map((movie) => {
+               {list.map((movie) => {
                  return <MovieCard movie={movie} key={movie.imdbID}/>
                })}
             </div>
