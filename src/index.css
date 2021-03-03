@@ -45,3 +45,96 @@ code {
   border-bottom-right-radius: 5px;
   cursor: pointer;
 }
+
+.main {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.tabs {
+  display: flex;
+  margin: 1em 0;
+}
+
+.tab button{
+    padding: 1em 1.5em;
+    margin-right: 1em;
+    background-color: white;
+    border: 0;
+    cursor: pointer;
+    font-size: 1rem;
+    outline: none;
+    width: 100%;
+}
+
+.active-tab {
+  border-bottom: 5px solid black;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie-card {
+  display: flex;
+  margin: 1em 0;
+}
+
+.left img{
+  width: 200px;
+  object-fit: cover;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+}
+
+.right .title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.right .plot {
+  font-size: 1rem;
+  letter-spacing: normal;
+}
+
+.footer {
+  display: flex;  
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.rating {
+  font-size: 1.5rem;
+  color: grey;
+  font-weight: bold;
+  align-self: flex-end;
+}
+
+.favourite-btn {
+  padding: 0.5em 1em;
+  border: 0;
+  background-color: dodgerblue;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.unfavourite-btn {
+  padding: 0.5em 1em;
+  border: 0;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
