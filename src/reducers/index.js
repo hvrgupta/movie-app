@@ -53,8 +53,16 @@ const intitalSearchState = {
     result: {}
 }
 
-export function search(state = intitalSearchState,action) {
-    return state;
+export function search(state = intitalSearchState, action) {
+    switch(action.type) {
+        case ADD_SEARCH_RESULT:
+            return {
+                ...state,
+                result: action.movie    
+            }
+        default:
+            return state;
+    }    
 }
 
 // const initalRootState = {
