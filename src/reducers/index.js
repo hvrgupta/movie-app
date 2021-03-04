@@ -57,10 +57,10 @@ export function search(state = intitalSearchState,action) {
     return state;
 }
 
-const initalRootState = {
-    movies: initialMoviesState,
-    search: intitalSearchState
-}
+// const initalRootState = {
+//     movies: initialMoviesState,
+//     search: intitalSearchState
+// }
 
 // export default function rootReducer(state = initalRootState,action) {
 //     return{
